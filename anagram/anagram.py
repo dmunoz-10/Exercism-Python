@@ -1,12 +1,9 @@
 def find_anagrams(word, candidates):
-    wordList = list(word.lower())
-    wordList.sort()
+    word_list = sorted(word.lower())
     patterns = []
     for candidate in candidates:
-        if word.lower() != candidate.lower():
-            candidateList = list(candidate.lower())
-            candidateList.sort()
-            if candidateList == wordList:
-                patterns.append(candidate)
+        candidate_list = sorted(candidate.lower())
+        if word.lower() != candidate.lower() and candidate_list == word_list:
+            patterns.append(candidate)
 
     return patterns

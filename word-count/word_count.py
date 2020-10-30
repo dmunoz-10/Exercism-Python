@@ -1,6 +1,7 @@
-import re
+from re import findall
 from collections import Counter
 
+
 def count_words(sentence):
-    word = re.findall("[a-zA-Z0-9]+(?:\'t)?", sentence.lower())
+    word = findall("[a-zA-Z0-9]+(?:\'t)?", sentence.lower())
     return Counter(word)
